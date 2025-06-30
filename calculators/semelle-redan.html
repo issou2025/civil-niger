@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Step Footing Calculator | Calculateur Semelle à Redans</title>
+  <meta name="description" content="Step Footing (Redan) calculator to size stepped foundations. Bilingual English/French.">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="../index.html" class="site-title" data-lang="en">Rare Civil Tools</a>
+        <a href="../index.html" class="site-title" data-lang="fr">Outils Rares du Génie Civil</a>
+        <div class="lang-switch">
+          <span data-switch="en">EN</span> | <span data-switch="fr">FR</span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 data-lang="en">Step Footing (Redan) Calculator</h1>
+    <h1 data-lang="fr">Calculateur de Semelle à Redans</h1>
+
+    <form id="redan-form" class="two-column">
+      <div>
+        <label for="steps" data-lang="en">Number of steps</label>
+        <label for="steps" data-lang="fr">Nombre de redans</label>
+        <input type="number" id="steps" min="1" required placeholder="e.g., 3">
+      </div>
+      <div>
+        <label for="stepHeight" data-lang="en">Height of each step (mm)</label>
+        <label for="stepHeight" data-lang="fr">Hauteur de chaque redan (mm)</label>
+        <input type="number" id="stepHeight" min="1" required placeholder="e.g., 200">
+      </div>
+      <div>
+        <label for="load" data-lang="en">Total load (kN)</label>
+        <label for="load" data-lang="fr">Charge totale (kN)</label>
+        <input type="number" id="load" min="1" required placeholder="e.g., 750">
+      </div>
+      <div>
+        <label for="capacity" data-lang="en">Soil bearing capacity (kN/m²)</label>
+        <label for="capacity" data-lang="fr">Capacité portante du sol (kN/m²)</label>
+        <input type="number" id="capacity" min="1" required placeholder="e.g., 200">
+      </div>
+
+      <button type="button" class="btn-primary" id="calc-btn" data-lang="en">Calculate</button>
+      <button type="button" class="btn-primary" id="calc-btn-fr" data-lang="fr">Calculer</button>
+      <button type="button" class="btn-secondary" id="reset-btn" data-lang="en">Reset</button>
+      <button type="button" class="btn-secondary" id="reset-btn-fr" data-lang="fr">Réinitialiser</button>
+    </form>
+
+    <div class="output" id="result"></div>
+
+    <section>
+      <h2 data-lang="en">Engineering Formula</h2>
+      <h2 data-lang="fr">Formule d'Ingénierie</h2>
+      <p data-lang="en">Required footing area A = Load / Soil Bearing Capacity.</p>
+      <p data-lang="fr">Surface de semelle requise A = Charge / Capacité portante du sol.</p>
+      <p data-lang="en">Assuming equal distribution among steps, each step area = A / Number of steps.</p>
+      <p data-lang="fr">En supposant une répartition égale entre les redans, surface par redan = A / Nombre de redans.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p><strong>Disclaimer:</strong> This website is for educational use only. It does not replace a certified engineer's validation. / <strong>Clause de non-responsabilité :</strong> Ce site est à but éducatif uniquement. Il ne remplace pas la validation par un ingénieur agréé.</p>
+    </div>
+  </footer>
+
+  <script src="../js/lang.js"></script>
+  <script src="../js/redan.js"></script>
+</body>
+</html> 

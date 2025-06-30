@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stair Reinforcement Estimator | Estimation Acier Escaliers</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <a href="../index.html" class="site-title" data-lang="en">Rare Civil Tools</a>
+      <a href="../index.html" class="site-title" data-lang="fr">Outils Rares du Génie Civil</a>
+      <div class="lang-switch">
+        <span data-switch="en">EN</span> | <span data-switch="fr">FR</span>
+      </div>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <h1 data-lang="en">Stair Reinforcement Estimator</h1>
+  <h1 data-lang="fr">Estimateur d'Acier pour Escaliers</h1>
+
+  <form id="stair-form" class="two-column">
+    <div>
+      <label data-lang="en" for="widthS">Stair width (m)</label>
+      <label data-lang="fr" for="widthS">Largeur escalier (m)</label>
+      <input type="number" id="widthS" min="0.5" step="0.01" required>
+    </div>
+    <div>
+      <label data-lang="en" for="rise">Rise per step (mm)</label>
+      <label data-lang="fr" for="rise">Hauteur de marche (mm)</label>
+      <input type="number" id="rise" min="100" step="1" required>
+    </div>
+    <div>
+      <label data-lang="en" for="run">Run per step (mm)</label>
+      <label data-lang="fr" for="run">Gironde de marche (mm)</label>
+      <input type="number" id="run" min="200" step="1" required>
+    </div>
+    <div>
+      <label data-lang="en" for="stepsN">Number of steps</label>
+      <label data-lang="fr" for="stepsN">Nombre de marches</label>
+      <input type="number" id="stepsN" min="3" required>
+    </div>
+    <button type="button" id="calc-stair" class="btn-primary" data-lang="en">Calculate</button>
+    <button type="button" id="calc-stair-fr" class="btn-primary" data-lang="fr">Calculer</button>
+    <button type="button" id="reset-stair" class="btn-secondary" data-lang="en">Reset</button>
+    <button type="button" id="reset-stair-fr" class="btn-secondary" data-lang="fr">Réinitialiser</button>
+  </form>
+
+  <div class="output" id="stair-result"></div>
+
+  <section>
+    <h2 data-lang="en">Assumptions</h2>
+    <h2 data-lang="fr">Hypothèses</h2>
+    <p data-lang="en">Concrete thickness 0.15 m. Steel ratio 120 kg/m³.</p>
+    <p data-lang="fr">Épaisseur de béton 0.15 m. Taux d'acier 120 kg/m³.</p>
+  </section>
+</main>
+<footer>
+  <div class="container">
+    <p><strong>Disclaimer:</strong> This website is for educational use only. It does not replace a certified engineer's validation. / <strong>Clause de non-responsabilité :</strong> Ce site est à but éducatif uniquement. Il ne remplace pas la validation par un ingénieur agréé.</p>
+  </div>
+</footer>
+<script src="../js/lang.js"></script>
+<script src="../js/escalier.js"></script>
+</body>
+</html> 

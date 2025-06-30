@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ground Beam Calculator | Calcul Longrine de Fondation</title>
+  <meta name="description" content="Continuous ground beam sizing calculator in English and French.">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="../index.html" class="site-title" data-lang="en">Rare Civil Tools</a>
+        <a href="../index.html" class="site-title" data-lang="fr">Outils Rares du Génie Civil</a>
+        <div class="lang-switch">
+          <span data-switch="en">EN</span> | <span data-switch="fr">FR</span>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <h1 data-lang="en">Continuous Ground Beam Calculator</h1>
+    <h1 data-lang="fr">Calculatrice de Longrine de Fondation</h1>
+
+    <form id="beam-form" class="two-column">
+      <div>
+        <label data-lang="en" for="span">Span (m)</label>
+        <label data-lang="fr" for="span">Portée (m)</label>
+        <input type="number" min="0.1" step="0.01" id="span" placeholder="e.g., 4" required>
+      </div>
+      <div>
+        <label data-lang="en" for="width">Beam Width b (mm)</label>
+        <label data-lang="fr" for="width">Largeur b (mm)</label>
+        <input type="number" min="100" step="1" id="width" placeholder="e.g., 300" required>
+      </div>
+      <div>
+        <label data-lang="en" for="soil">Soil Pressure (kN/m²)</label>
+        <label data-lang="fr" for="soil">Pression du sol (kN/m²)</label>
+        <input type="number" min="1" id="soil" placeholder="e.g., 200" required>
+      </div>
+      <div>
+        <label data-lang="en" for="fck">Concrete fck (MPa)</label>
+        <label data-lang="fr" for="fck">Béton fck (MPa)</label>
+        <input type="number" min="15" id="fck" value="25">
+      </div>
+      <button type="button" id="calc-beam" class="btn-primary" data-lang="en">Calculate</button>
+      <button type="button" id="calc-beam-fr" class="btn-primary" data-lang="fr">Calculer</button>
+      <button type="button" id="reset-beam" class="btn-secondary" data-lang="en">Reset</button>
+      <button type="button" id="reset-beam-fr" class="btn-secondary" data-lang="fr">Réinitialiser</button>
+    </form>
+
+    <div class="output" id="beam-result"></div>
+
+    <section>
+      <h2 data-lang="en">Engineering Notes</h2>
+      <h2 data-lang="fr">Notes d'Ingénierie</h2>
+      <p data-lang="en">Maximum bending moment for a uniformly loaded simple beam: M = wL² / 8.</p>
+      <p data-lang="fr">Moment fléchissant maximum pour une poutre simplement appuyée et chargée uniformément : M = wL² / 8.</p>
+      <p data-lang="en">Required section modulus Z = M / (0.6 fck).</p>
+      <p data-lang="fr">Module de section requis Z = M / (0.6 fck).</p>
+    </section>
+  </main>
+  <footer>
+    <div class="container">
+      <p><strong>Disclaimer:</strong> This website is for educational use only. It does not replace a certified engineer's validation. / <strong>Clause de non-responsabilité :</strong> Ce site est à but éducatif uniquement. Il ne remplace pas la validation par un ingénieur agréé.</p>
+    </div>
+  </footer>
+  <script src="../js/lang.js"></script>
+  <script src="../js/longrine.js"></script>
+</body>
+</html> 

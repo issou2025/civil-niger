@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Isolated Foundation | Fondation Isolée</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="../index.html" class="site-title" data-lang="en">Rare Civil Tools</a>
+        <a href="../index.html" class="site-title" data-lang="fr">Outils Rares du Génie Civil</a>
+        <div class="lang-switch">
+          <span data-switch="en">EN</span> | <span data-switch="fr">FR</span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 data-lang="en">Isolated Foundation Calculator</h1>
+    <h1 data-lang="fr">Calculateur de Fondation Isolée</h1>
+
+    <form id="found-form" class="two-column">
+      <div>
+        <label data-lang="en" for="load">Vertical load N (kN)</label>
+        <label data-lang="fr" for="load">Charge verticale N (kN)</label>
+        <input type="number" id="load" min="0" required>
+      </div>
+      <div>
+        <label data-lang="en" for="moment">Moment M (kN·m)</label>
+        <label data-lang="fr" for="moment">Moment M (kN·m)</label>
+        <input type="number" id="moment" min="0" value="0" required>
+      </div>
+      <div>
+        <label data-lang="en" for="soil">Soil bearing capacity (kPa)</label>
+        <label data-lang="fr" for="soil">Capacité portante sol (kPa)</label>
+        <input type="number" id="soil" min="50" required>
+      </div>
+      <div>
+        <label data-lang="en" for="depth">Foundation depth (m)</label>
+        <label data-lang="fr" for="depth">Profondeur fondation (m)</label>
+        <input type="number" id="depth" min="0.5" step="0.1" required>
+      </div>
+      <div>
+        <label data-lang="en" for="concrete">Concrete fck (MPa)</label>
+        <label data-lang="fr" for="concrete">Béton fck (MPa)</label>
+        <input type="number" id="concrete" min="20" value="25" required>
+      </div>
+      <div>
+        <label data-lang="en" for="steel">Steel fyk (MPa)</label>
+        <label data-lang="fr" for="steel">Acier fyk (MPa)</label>
+        <input type="number" id="steel" min="400" value="500" required>
+      </div>
+
+      <button type="button" id="calc-found" class="btn-primary" data-lang="en">Calculate</button>
+      <button type="button" id="calc-found-fr" class="btn-primary" data-lang="fr">Calculer</button>
+      <button type="button" id="reset-found" class="btn-secondary" data-lang="en">Reset</button>
+      <button type="button" id="reset-found-fr" class="btn-secondary" data-lang="fr">Réinitialiser</button>
+    </form>
+
+    <div class="output" id="found-result"></div>
+
+    <section>
+      <h2 data-lang="en">Method</h2>
+      <h2 data-lang="fr">Méthode</h2>
+      <p data-lang="en">Calculates required dimensions and reinforcement for isolated foundations.</p>
+      <p data-lang="fr">Calcule les dimensions et le ferraillage nécessaires pour fondations isolées.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p><strong>Disclaimer:</strong> This website is for educational use only. It does not replace a certified engineer's validation. / <strong>Clause de non-responsabilité :</strong> Ce site est à but éducatif uniquement. Il ne remplace pas la validation par un ingénieur agréé.</p>
+    </div>
+  </footer>
+
+  <script src="../js/lang.js"></script>
+  <script src="../js/fondation.js"></script>
+</body>
+</html> 

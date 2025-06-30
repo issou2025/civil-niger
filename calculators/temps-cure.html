@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concrete Curing Time | Temps de Cure du Béton</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <a href="../index.html" class="site-title" data-lang="en">Rare Civil Tools</a>
+      <a href="../index.html" class="site-title" data-lang="fr">Outils Rares du Génie Civil</a>
+      <div class="lang-switch">
+        <span data-switch="en">EN</span> | <span data-switch="fr">FR</span>
+      </div>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <h1 data-lang="en">Concrete Curing Time Estimator</h1>
+  <h1 data-lang="fr">Estimateur du Temps de Cure du Béton</h1>
+
+  <form id="cure-form" class="two-column">
+    <div>
+      <label data-lang="en" for="temp">Ambient temperature (°C)</label>
+      <label data-lang="fr" for="temp">Température ambiante (°C)</label>
+      <input type="number" id="temp" value="20" step="0.1" required>
+    </div>
+    <div>
+      <label data-lang="en" for="type">Cement type</label>
+      <label data-lang="fr" for="type">Type de ciment</label>
+      <select id="type">
+        <option value="I">I</option>
+        <option value="II">II</option>
+        <option value="III">III (rapid)</option>
+      </select>
+    </div>
+    <div>
+      <label data-lang="en" for="class">Concrete strength class (MPa)</label>
+      <label data-lang="fr" for="class">Classe de résistance (MPa)</label>
+      <input type="number" id="class" value="25" required>
+    </div>
+    <button type="button" id="calc-cure" class="btn-primary" data-lang="en">Calculate</button>
+    <button type="button" id="calc-cure-fr" class="btn-primary" data-lang="fr">Calculer</button>
+    <button type="button" id="reset-cure" class="btn-secondary" data-lang="en">Reset</button>
+    <button type="button" id="reset-cure-fr" class="btn-secondary" data-lang="fr">Réinitialiser</button>
+  </form>
+
+  <div class="output" id="cure-result"></div>
+
+  <section>
+    <h2 data-lang="en">Approach</h2>
+    <h2 data-lang="fr">Approche</h2>
+    <p data-lang="en">Base curing time 28 days at 20 °C for Type I cement. For each 10 °C rise, time halves. Type III reduces by 30%.</p>
+    <p data-lang="fr">Temps de cure de base 28 jours à 20 °C pour ciment Type I. Chaque augmentation de 10 °C divise le temps par deux. Le Type III réduit de 30 %.</p>
+  </section>
+</main>
+<footer>
+  <div class="container">
+    <p><strong>Disclaimer:</strong> This website is for educational use only. It does not replace a certified engineer's validation. / <strong>Clause de non-responsabilité :</strong> Ce site est à but éducatif uniquement. Il ne remplace pas la validation par un ingénieur agréé.</p>
+  </div>
+</footer>
+<script src="../js/lang.js"></script>
+<script src="../js/cure.js"></script>
+</body>
+</html> 

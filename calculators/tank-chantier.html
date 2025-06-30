@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site Water Tank Sizing | Réservoir d'Eau de Chantier</title>
+  <meta name="description" content="Calculate required water storage volume for a construction site.">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="../index.html" class="site-title" data-lang="en">Rare Civil Tools</a>
+        <a href="../index.html" class="site-title" data-lang="fr">Outils Rares du Génie Civil</a>
+        <div class="lang-switch">
+          <span data-switch="en">EN</span> | <span data-switch="fr">FR</span>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <h1 data-lang="en">Construction Site Water Tank Calculator</h1>
+    <h1 data-lang="fr">Calculateur de Réservoir d'Eau pour Chantier</h1>
+
+    <form id="tank-form" class="two-column">
+      <div>
+        <label data-lang="en" for="workers">Number of workers</label>
+        <label data-lang="fr" for="workers">Nombre d'ouvriers</label>
+        <input type="number" id="workers" min="1" required>
+      </div>
+      <div>
+        <label data-lang="en" for="duration">Site duration (days)</label>
+        <label data-lang="fr" for="duration">Durée du chantier (jours)</label>
+        <input type="number" id="duration" min="1" required>
+      </div>
+      <div>
+        <label data-lang="en" for="daily">Daily consumption per worker (L)</label>
+        <label data-lang="fr" for="daily">Consommation quotidienne par ouvrier (L)</label>
+        <input type="number" id="daily" min="1" value="25" required>
+      </div>
+      <button type="button" id="calc-tank" class="btn-primary" data-lang="en">Calculate</button>
+      <button type="button" id="calc-tank-fr" class="btn-primary" data-lang="fr">Calculer</button>
+      <button type="button" id="reset-tank" class="btn-secondary" data-lang="en">Reset</button>
+      <button type="button" id="reset-tank-fr" class="btn-secondary" data-lang="fr">Réinitialiser</button>
+    </form>
+
+    <div class="output" id="tank-result"></div>
+
+    <section>
+      <h2 data-lang="en">Formula</h2>
+      <h2 data-lang="fr">Formule</h2>
+      <p data-lang="en">Tank volume V = Workers × Daily consumption × Duration.</p>
+      <p data-lang="fr">Volume du réservoir V = Ouvriers × Consommation quotidienne × Durée.</p>
+    </section>
+  </main>
+  <footer>
+    <div class="container">
+      <p><strong>Disclaimer:</strong> This website is for educational use only. It does not replace a certified engineer's validation. / <strong>Clause de non-responsabilité :</strong> Ce site est à but éducatif uniquement. Il ne remplace pas la validation par un ingénieur agréé.</p>
+    </div>
+  </footer>
+  <script src="../js/lang.js"></script>
+  <script src="../js/tank.js"></script>
+</body>
+</html> 

@@ -1,0 +1,430 @@
+/* Calculator Container */
+.calculator-container {
+  display: flex;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+/* Calculator Layout */
+.calculator {
+  display: grid;
+  grid-template-columns: auto 250px;
+  gap: 1.5rem;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 24px;
+  padding: 1.5rem;
+  box-shadow: 
+    0 4px 6px rgba(0,0,0,0.1),
+    0 1px 3px rgba(0,0,0,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.1);
+}
+
+/* Main Calculator Area */
+.main-calc {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Display */
+.display {
+  background: rgba(0,0,0,0.8);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: right;
+  font-family: 'Inter', monospace;
+}
+
+.history {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.9rem;
+  min-height: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.result {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Buttons Layout */
+.buttons {
+  display: grid;
+  grid-template-areas:
+    "scientific scientific scientific scientific"
+    "memory memory memory memory"
+    "numpad numpad numpad numpad"
+    "additional additional additional additional";
+  gap: 0.75rem;
+}
+
+/* Scientific Functions */
+.scientific {
+  grid-area: scientific;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+/* Memory and Clear Section */
+.memory-clear {
+  grid-area: memory;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr) 50px;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+/* Numeric Keypad */
+.numeric-pad {
+  grid-area: numpad;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+/* Additional Functions */
+.additional {
+  grid-area: additional;
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+/* Memory Indicator */
+.memory-indicator {
+  background: var(--accent);
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-align: center;
+  min-width: 30px;
+}
+
+/* Button Styles */
+.calculator button {
+  min-height: 3rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Number Buttons */
+.number {
+  background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+  color: white;
+  font-size: 1.4rem !important;
+}
+
+/* Operator Buttons */
+.operator {
+  background: var(--gradient-2);
+  color: white;
+  font-size: 1.4rem !important;
+}
+
+/* Function Buttons */
+.function {
+  background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+  color: var(--accent-light);
+  font-size: 1rem !important;
+}
+
+/* Memory Buttons */
+.memory {
+  background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+  color: var(--primary-light);
+  font-size: 0.9rem !important;
+}
+
+/* Equals Button */
+.equals {
+  background: var(--gradient-3);
+  color: white;
+  font-size: 1.4rem !important;
+}
+
+/* Button Hover Effects */
+.calculator button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.calculator button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Special Button Styles */
+.clear-btn {
+  background: linear-gradient(145deg, #ff6b6b, #ee5a52) !important;
+  color: white !important;
+}
+
+.clear-btn:hover {
+  box-shadow: 0 0 15px rgba(255, 107, 107, 0.4);
+}
+
+.mode-btn {
+  background: linear-gradient(145deg, #4ecdc4, #44a08d) !important;
+  color: white !important;
+}
+
+.mode-btn:hover {
+  box-shadow: 0 0 15px rgba(78, 205, 196, 0.4);
+}
+
+.mode-btn.active {
+  background: linear-gradient(145deg, #45b7aa, #3a9b8a) !important;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Button Glow Effects */
+.operator:hover,
+.equals:hover {
+  box-shadow: 0 0 15px rgba(255,255,255,0.2);
+}
+
+.function:hover {
+  box-shadow: 0 0 15px rgba(var(--accent-light), 0.2);
+}
+
+.memory:hover {
+  box-shadow: 0 0 15px rgba(var(--primary-light), 0.2);
+}
+
+/* Button Groups */
+.buttons > button:nth-child(4n) {
+  border-right: none;
+}
+
+.buttons > button:nth-child(-n+4) {
+  border-top: none;
+}
+
+/* Scientific Functions Styling */
+button[data-action^="sin"],
+button[data-action^="cos"],
+button[data-action^="tan"] {
+  color: var(--accent);
+}
+
+button[data-action="sqrt"],
+button[data-action^="power"] {
+  color: var(--primary);
+}
+
+button[data-action="pi"],
+button[data-action="e"] {
+  font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .calculator-container {
+    flex-direction: column;
+  }
+  
+  .calculator {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .calculator {
+    padding: 1rem;
+  }
+
+  .buttons {
+    gap: 0.5rem;
+  }
+
+  .calculator button {
+    min-height: 2.5rem;
+    font-size: 0.9rem !important;
+  }
+
+  .number, .operator, .equals {
+    font-size: 1.2rem !important;
+  }
+
+  .scientific {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .memory-clear {
+    grid-template-columns: repeat(3, 1fr) auto;
+  }
+
+  .numeric-pad {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .additional {
+    grid-template-columns: 1fr 1fr auto;
+  }
+
+  .display {
+    padding: 1rem;
+  }
+
+  .result {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .scientific {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .memory-clear {
+    grid-template-columns: repeat(2, 1fr) auto;
+  }
+
+  .calculator button {
+    min-height: 2.2rem;
+    font-size: 0.8rem !important;
+  }
+
+  .result {
+    font-size: 1.8rem;
+  }
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  .calculator {
+    background: rgba(0,0,0,0.3);
+  }
+
+  .display {
+    background: rgba(0,0,0,0.9);
+  }
+
+  .number {
+    background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+  }
+
+  .function, .memory {
+    background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+  }
+
+  .history {
+    color: rgba(255,255,255,0.6);
+  }
+}
+
+/* Button Categories Indicators */
+.function::before,
+.memory::before,
+.operator::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  opacity: 0.2;
+}
+
+/* Enhanced Visibility for Special Functions */
+button[data-action="clear"],
+button[data-action="clearEntry"] {
+  color: var(--error);
+}
+
+button[data-action="backspace"] {
+  color: var(--warning);
+}
+
+/* Improved Button Text Visibility */
+.calculator button sup {
+  font-size: 0.7em;
+  position: relative;
+  top: -0.5em;
+}
+
+.calculator button .fas {
+  font-size: 1.1em;
+}
+
+/* History Panel */
+.history-panel {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
+  border-radius: 24px;
+  padding: 1.5rem;
+  width: 300px;
+  display: none;
+}
+
+.history-panel h3 {
+  color: var(--text);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.history-list {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+}
+
+.history-item {
+  padding: 0.75rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  color: var(--text);
+}
+
+.clear-history {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 12px;
+  background: var(--gradient-1);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.clear-history:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .history-panel {
+    display: block;
+  }
+}
+
+/* Animation */
+@keyframes buttonPress {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+.calculator button:active {
+  animation: buttonPress 0.2s ease;
+} 

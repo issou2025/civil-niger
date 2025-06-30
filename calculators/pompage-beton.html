@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concrete Pumping Time | Temps de Pompage du Béton</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <a href="../index.html" class="site-title" data-lang="en">Rare Civil Tools</a>
+      <a href="../index.html" class="site-title" data-lang="fr">Outils Rares du Génie Civil</a>
+      <div class="lang-switch">
+        <span data-switch="en">EN</span> | <span data-switch="fr">FR</span>
+      </div>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <h1 data-lang="en">Concrete Pumping Time Estimator</h1>
+  <h1 data-lang="fr">Estimateur du Temps de Pompage du Béton</h1>
+
+  <form id="pump-form" class="two-column">
+    <div>
+      <label data-lang="en" for="volume">Concrete volume (m³)</label>
+      <label data-lang="fr" for="volume">Volume de béton (m³)</label>
+      <input type="number" id="volume" min="1" required>
+    </div>
+    <div>
+      <label data-lang="en" for="speed">Pump speed (m³/h)</label>
+      <label data-lang="fr" for="speed">Débit de la pompe (m³/h)</label>
+      <input type="number" id="speed" min="1" value="30" required>
+    </div>
+    <div>
+      <label data-lang="en" for="distance">Horizontal distance (m)</label>
+      <label data-lang="fr" for="distance">Distance horizontale (m)</label>
+      <input type="number" id="distance" min="0" value="0" required>
+    </div>
+    <div>
+      <label data-lang="en" for="slump">Slump class</label>
+      <label data-lang="fr" for="slump">Classe d'affaissement</label>
+      <select id="slump">
+        <option value="low" data-lang="en">Low</option>
+        <option value="medium" data-lang="en">Medium</option>
+        <option value="high" data-lang="en">High</option>
+        <option value="low" data-lang="fr">Faible</option>
+        <option value="medium" data-lang="fr">Moyen</option>
+        <option value="high" data-lang="fr">Élevé</option>
+      </select>
+    </div>
+    <button type="button" id="calc-pump" class="btn-primary" data-lang="en">Calculate</button>
+    <button type="button" id="calc-pump-fr" class="btn-primary" data-lang="fr">Calculer</button>
+    <button type="button" id="reset-pump" class="btn-secondary" data-lang="en">Reset</button>
+    <button type="button" id="reset-pump-fr" class="btn-secondary" data-lang="fr">Réinitialiser</button>
+  </form>
+
+  <div class="output" id="pump-result"></div>
+
+  <section>
+    <h2 data-lang="en">Method</h2>
+    <h2 data-lang="fr">Méthode</h2>
+    <p data-lang="en">Time = Volume / Speed × distance factor. High slump decreases time by 10%, low increases by 10%.</p>
+    <p data-lang="fr">Temps = Volume / Débit × facteur distance. Affaissement élevé réduit le temps de 10 %, faible l'augmente de 10 %.</p>
+  </section>
+</main>
+<footer>
+  <div class="container">
+    <p><strong>Disclaimer:</strong> This website is for educational use only. It does not replace a certified engineer's validation. / <strong>Clause de non-responsabilité :</strong> Ce site est à but éducatif uniquement. Il ne remplace pas la validation par un ingénieur agréé.</p>
+  </div>
+</footer>
+<script src="../js/lang.js"></script>
+<script src="../js/pompage.js"></script>
+</body>
+</html> 

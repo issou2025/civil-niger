@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rebar Anchorage Length Calculator | Longueur d'Ancrage</title>
+  <meta name="description" content="Estimate rebar anchorage length based on diameter and concrete class.">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="../index.html" class="site-title" data-lang="en">Rare Civil Tools</a>
+        <a href="../index.html" class="site-title" data-lang="fr">Outils Rares du Génie Civil</a>
+        <div class="lang-switch">
+          <span data-switch="en">EN</span> | <span data-switch="fr">FR</span>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <h1 data-lang="en">Rebar Anchorage Length Calculator</h1>
+    <h1 data-lang="fr">Calculateur de Longueur d'Ancrage des Armatures</h1>
+    <form id="anchor-form" class="two-column">
+      <div>
+        <label data-lang="en" for="diam">Bar diameter (mm)</label>
+        <label data-lang="fr" for="diam">Diamètre de la barre (mm)</label>
+        <input type="number" id="diam" min="6" step="1" placeholder="e.g., 16" required>
+      </div>
+      <div>
+        <label data-lang="en" for="class">Concrete class (MPa)</label>
+        <label data-lang="fr" for="class">Classe de béton (MPa)</label>
+        <input type="number" id="class" min="15" step="5" placeholder="e.g., 25" required>
+      </div>
+      <div>
+        <label data-lang="en" for="pos">Bar position</label>
+        <label data-lang="fr" for="pos">Position de la barre</label>
+        <select id="pos">
+          <option value="bottom" data-lang="en">Bottom</option>
+          <option value="bottom" data-lang="fr">Bas</option>
+          <option value="top" data-lang="en">Top (poor bond)</option>
+          <option value="top" data-lang="fr">Haut (adhérence réduite)</option>
+        </select>
+      </div>
+      <button type="button" id="calc-anchor" class="btn-primary" data-lang="en">Calculate</button>
+      <button type="button" id="calc-anchor-fr" class="btn-primary" data-lang="fr">Calculer</button>
+      <button type="button" id="reset-anchor" class="btn-secondary" data-lang="en">Reset</button>
+      <button type="button" id="reset-anchor-fr" class="btn-secondary" data-lang="fr">Réinitialiser</button>
+    </form>
+
+    <div class="output" id="anchor-result"></div>
+
+    <section>
+      <h2 data-lang="en">Formula</h2>
+      <h2 data-lang="fr">Formule</h2>
+      <p data-lang="en">Basic anchorage length Lb ≈ 40 × bar diameter (for good bond conditions).</p>
+      <p data-lang="fr">Longueur d'ancrage de base Lb ≈ 40 × diamètre de la barre (pour de bonnes conditions d'adhérence).</p>
+      <p data-lang="en">Top bars: +30% length.</p>
+      <p data-lang="fr">Barres en haut : +30% de longueur.</p>
+    </section>
+  </main>
+  <footer>
+    <div class="container">
+      <p><strong>Disclaimer:</strong> This website is for educational use only. It does not replace a certified engineer's validation. / <strong>Clause de non-responsabilité :</strong> Ce site est à but éducatif uniquement. Il ne remplace pas la validation par un ingénieur agréé.</p>
+    </div>
+  </footer>
+  <script src="../js/lang.js"></script>
+  <script src="../js/rebar.js"></script>
+</body>
+</html> 

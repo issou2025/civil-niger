@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scientific Calculator | Calculatrice Scientifique</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/calculator.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1963782565227057" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="../index.html" class="site-title" data-lang="en">Rare Civil Tools</a>
+        <a href="../index.html" class="site-title" data-lang="fr">Outils Rares du Génie Civil</a>
+        <div class="lang-switch">
+          <span data-switch="en">EN</span> | <span data-switch="fr">FR</span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 data-lang="en">Scientific Calculator</h1>
+    <h1 data-lang="fr">Calculatrice Scientifique</h1>
+
+    <div class="calculator-container">
+      <div class="calculator">
+        <div class="display">
+          <div class="history"></div>
+          <div class="result">0</div>
+        </div>
+        
+        <div class="buttons">
+          <!-- Scientific Functions Row 1 -->
+          <div class="scientific">
+            <button class="function" data-action="sin" title="Sine">sin</button>
+            <button class="function" data-action="cos" title="Cosine">cos</button>
+            <button class="function" data-action="tan" title="Tangent">tan</button>
+            <button class="function" data-action="log" title="Logarithm base 10">log</button>
+
+            <button class="function" data-action="asin" title="Arc sine">asin</button>
+            <button class="function" data-action="acos" title="Arc cosine">acos</button>
+            <button class="function" data-action="atan" title="Arc tangent">atan</button>
+            <button class="function" data-action="ln" title="Natural logarithm">ln</button>
+
+            <button class="function" data-action="sqrt" title="Square root">√</button>
+            <button class="function" data-action="power" title="Power">x<sup>y</sup></button>
+            <button class="function" data-action="power2" title="Square">x²</button>
+            <button class="function" data-action="power3" title="Cube">x³</button>
+
+            <button class="function" data-action="pi" title="Pi constant">π</button>
+            <button class="function" data-action="e" title="Euler's number">e</button>
+            <button class="function" data-action="abs" title="Absolute value">|x|</button>
+            <button class="function" data-action="fact" title="Factorial">n!</button>
+          </div>
+
+          <!-- Memory and Control Functions -->
+          <div class="memory-clear">
+            <button class="memory" data-action="mc" title="Memory Clear">MC</button>
+            <button class="memory" data-action="mr" title="Memory Recall">MR</button>
+            <button class="memory" data-action="ms" title="Memory Store">MS</button>
+            <button class="memory" data-action="m+" title="Memory Add">M+</button>
+            <button class="memory" data-action="m-" title="Memory Subtract">M−</button>
+            <button class="memory" data-action="mh" title="Memory Exchange">M↔</button>
+
+            <button class="function clear-btn" data-action="clear" title="Clear All">C</button>
+            <button class="function clear-btn" data-action="clearEntry" title="Clear Entry">CE</button>
+            <button class="function" data-action="backspace" title="Backspace">
+              <i class="fas fa-backspace"></i>
+            </button>
+            <button class="function" data-action="plusminus" title="Plus/Minus">±</button>
+          </div>
+
+          <!-- Numeric Keypad -->
+          <div class="numeric-pad">
+            <button class="function" data-action="openParen" title="Open parenthesis">(</button>
+            <button class="function" data-action="closeParen" title="Close parenthesis">)</button>
+            <button class="function" data-action="percent" title="Percent">%</button>
+            <button class="operator" data-action="divide" title="Divide">÷</button>
+            
+            <button class="number" data-value="7" title="Seven">7</button>
+            <button class="number" data-value="8" title="Eight">8</button>
+            <button class="number" data-value="9" title="Nine">9</button>
+            <button class="operator" data-action="multiply" title="Multiply">×</button>
+            
+            <button class="number" data-value="4" title="Four">4</button>
+            <button class="number" data-value="5" title="Five">5</button>
+            <button class="number" data-value="6" title="Six">6</button>
+            <button class="operator" data-action="subtract" title="Subtract">−</button>
+            
+            <button class="number" data-value="1" title="One">1</button>
+            <button class="number" data-value="2" title="Two">2</button>
+            <button class="number" data-value="3" title="Three">3</button>
+            <button class="operator" data-action="add" title="Add">+</button>
+            
+            <button class="function" data-action="exp" title="Exponential">EXP</button>
+            <button class="number" data-value="0" title="Zero">0</button>
+            <button class="number" data-value="." title="Decimal point">.</button>
+            <button class="equals" data-action="equals" title="Equals">=</button>
+          </div>
+
+          <!-- Additional Functions -->
+          <div class="additional">
+            <button class="function mode-btn" data-action="rad" title="Radians mode">RAD</button>
+            <button class="function mode-btn" data-action="deg" title="Degrees mode">DEG</button>
+            <div class="memory-indicator" style="display: none;">M</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Calculator History -->
+      <div class="history-panel">
+        <h3 data-lang="en">History</h3>
+        <h3 data-lang="fr">Historique</h3>
+        <div class="history-list"></div>
+        <button class="clear-history" data-lang="en">Clear History</button>
+        <button class="clear-history" data-lang="fr">Effacer l'historique</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p><strong>Disclaimer:</strong> This website is for educational use only. It does not replace a certified engineer's validation. / <strong>Clause de non-responsabilité :</strong> Ce site est à but éducatif uniquement. Il ne remplace pas la validation par un ingénieur agréé.</p>
+    </div>
+  </footer>
+
+  <script src="../js/lang.js"></script>
+  <script src="../js/calculator.js"></script>
+</body>
+</html> 
